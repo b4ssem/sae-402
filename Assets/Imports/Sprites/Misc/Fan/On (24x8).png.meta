@@ -138,94 +138,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< Updated upstream
-      spriteID: c5ede832101cb46498e2fb2b7f4effd4
-      internalID: 1055925303
-=======
-      spriteID: 0d952cb848d10314d86b77c7128dd161
-      internalID: -106465452
->>>>>>> Stashed changes
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: On (24x8)_1
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 0
-        width: 24
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< Updated upstream
-      spriteID: 1fa751bf7a94f42308f9d569d5972e01
-      internalID: 1322552311
-=======
-      spriteID: bef088f83aff59e42a9e59f8164f1b77
-      internalID: 1297194631
->>>>>>> Stashed changes
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: On (24x8)_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 24
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< Updated upstream
-      spriteID: 56aea882f029743b1b6f33aa039ce452
-      internalID: 629726091
-=======
-      spriteID: b2a5988be72c009558eeef9776f04118
-      internalID: 1367804127
->>>>>>> Stashed changes
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: On (24x8)_3
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 24
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< Updated upstream
-      spriteID: 689ebc47650c5480b9524fbe67103c1a
-      internalID: -404829903
-=======
-      spriteID: c654eb3775a62fc2a8124f2a4cd6ab38
-      internalID: 1017429925
->>>>>>> Stashed changes
+      spriteID: 0e2d0e255fcd227e0800000000000000
+      internalID: -1791626755524472096
       vertices: []
       indices: 
       edges: []
@@ -234,7 +148,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -242,21 +156,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":24.0,"y":8.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-<<<<<<< Updated upstream
-      On (24x8)_0: 1055925303
-      On (24x8)_1: 1322552311
-      On (24x8)_2: 629726091
-      On (24x8)_3: -404829903
-=======
-      On (24x8)_0: -106465452
-      On (24x8)_1: 1297194631
-      On (24x8)_2: 1367804127
-      On (24x8)_3: 1017429925
->>>>>>> Stashed changes
+      On (24x8)_0: -1791626755524472096
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
