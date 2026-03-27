@@ -3119,6 +3119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05885756f93e3e145a2897d1dfdb0d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  itemPrefabStored: {fileID: 6722714434073853403, guid: 3a535e80d5f7cab42aa945a6a87c152f, type: 3}
   isHidden: 0
 --- !u!61 &320003355
 BoxCollider2D:
