@@ -52,7 +52,7 @@ public class CurrentSceneManager : MonoBehaviour
         {
             Debug.Log($"Unknown scene with index {sceneIndex}. Please add the scene to the build settings.");
         }
-    }
+    }   
 
     public void RestartLevel()
     {
