@@ -629,8 +629,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -320, y: 133.25}
-  m_SizeDelta: {x: 614.619, y: 266.5}
+  m_AnchoredPosition: {x: -320, y: 161}
+  m_SizeDelta: {x: 614.619, y: 309.536}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &334807274
 MonoBehaviour:
@@ -652,8 +652,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "D\xE9veloppeurs:\n\nTim\xE9o DE CASTRO\nMalo LE CAER\nYves NSABIMANA\nBassem
-    MEGHICHE\n"
+  m_text: "D\xE9veloppeurs:\n\nTim\xE9o DE CASTRO\nAbdelouahab KHENENOU\nMalo LE
+    CAER\nBassem MEGHICHE\nYves NSABIMANA\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7777bc6d344010a4195c410911f44638, type: 2}
   m_sharedMaterial: {fileID: 8529902896789028525, guid: 7777bc6d344010a4195c410911f44638, type: 2}
@@ -990,7 +990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &532221420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2192,7 +2192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1240746291
 MonoBehaviour:
   m_ObjectHideFlags: 0
