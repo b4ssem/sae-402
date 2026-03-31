@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de5c92e6998b85342b01c07e022f6325, type: 3}
-  m_Name: RockHeadData
+  m_Name: RockHeadData_slow
   m_EditorClassIdentifier: 
-  speed: 1200
+  speed: 1000
   mass: 1000
-  delayBetweenMoves: 0.7
+  delayBetweenMoves: 1.85
   listContactsLayers:
     serializedVersion: 2
     m_Bits: 1288
