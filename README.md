@@ -17,12 +17,12 @@ Ce commit va
 
 ### Malo:
 
-- Terminer la gestion de la mort du personnage. A l'heure actuelle, il y a :
+- [x] Terminer la gestion de la mort du personnage. A l'heure actuelle, il y a :
     - un évènement (OnPlayerDeath) sur le GameObject "Player" (utilisable depuis l'onglet `Assets` en Play Mode)
     - une animation de mort du personnage (testable avec la touche N du clavier)
     - "Suppression" du Rigidbody2D associé (Passage de "Simulated" à "Non simulated"). Le personnage traverse les murs à la mort
     - La mort instanée si le joueur est écrasé par un RockHead ou que ses points de vie atteignent 0
-    - **A vous de faire le reste** (liste non exhaustive)
+    - [x] **A vous de faire le reste** (liste non exhaustive)
       - Bloquer les mouvements du joueur
       - Afficher un écran de "Fin de partie"
       - ...
@@ -53,23 +53,23 @@ Ce commit va
 
 ### Bassem:
 
-- Compléter l'écran d'accueil (écran qui permet de commencer le jeu)
+- [x] Compléter l'écran d'accueil (écran qui permet de commencer le jeu)
     - L'écran doit contenir :
-        - Le logo de l'université
+        - [x] Le logo de l'université
             - Plusieurs versions sont déjà présentes dans le projet dans le dossier `Assets/Imports/Logos` à vous de choisir
-        - Le nom du jeu
+        - [x] Le nom du jeu
           - Vous devez en trouver un
           - Le logo peut être fait sous Photoshop ou autre puis intégré sous forme d'image dans Unity ou tout simplement du texte
-        - De quoi commencer le jeu au premier niveau
+        - [x] De quoi commencer le jeu au premier niveau
             - Il y a déjà un bouton, il faut ajouter la fonction pour charger le premier niveau grâce au `GameObject` CurrentSceneManager
-        - Un bouton pour permettre de quitter le jeu
-        - Les développeurs / développeuses du jeu, le nom de la formation et l'année scolaire courante
+        - [x] Un bouton pour permettre de quitter le jeu
+        - [x] Les développeurs / développeuses du jeu, le nom de la formation et l'année scolaire courante
     - Pour rappel, ici il faudra utiliser un Canvas
-- Ajouter un écran des crédits [(voir contenu attendu)](#contenu-de-lécran-des-crédits)
+- [x] Ajouter un écran des crédits [(voir contenu attendu)](#contenu-de-lécran-des-crédits)
   - Ces crédits doivent être accessible depuis l'écran d'accueil, au minimum
-- Afficher dans la splash page de jeu le logo de l'université (voir menu `Project Settings > Player > Logo`)
+- [x] Afficher dans la splash page de jeu le logo de l'université (voir menu `Project Settings > Player > Logo`)
     - [Didacticiel en anglais sur la personnalisation de la splash page](https://www.youtube.com/watch?v=BY40xbA5qYQ)
-- Compléter le menu Pause
+- [x] Compléter le menu Pause
     - Il est déjà possible de mettre le jeu en pause en appuyant sur la touche "Echap". Grâce au composant "PauseManager" dans le projet, complétez-le
     - La gestion du menu pause est faite grâce à un ScriptableObject (`Assets/ScriptableObjects/Events/Events/OnTogglePauseEvent`)
     - Libre à vous d'ajouter d'autres options dans le menu de pause comme relancer le niveau ou encore retourner au menu principal via un bouton
