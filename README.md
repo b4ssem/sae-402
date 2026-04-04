@@ -8,26 +8,15 @@ Ce commit va
 
 ### Abdel:
 
-- [ ] Compléter le niveau du projet en permettant au joueur de passer au niveau suivant
+- Compléter le niveau du projet en permettant au joueur de passer au niveau suivant
     - Il y a déjà des trophées (prefab) qui servent de fin de niveau, il faudra juste les compléter
-- [ ] Afficher un indicateur du nombre de points de vie
+- Afficher un indicateur du nombre de points de vie
     - Optionnel : possibilité de proposer le regain de vie
     - Note : Vous pouvez également décider qu'au moindre dégât le joueur meurt immédiatement
 > La gestion des points de vie du joueur est gérée via un ScriptableObject. Qui gère à la fois le nombre de points de vie actuels et maximum. A noter que la valeur des points de vie actuels est "clampée", autrement dit, elle ne peut pas être inférieure à 0 ni supérieure au nombre de points de vie maximum définis. Si vous le souhaitez, vous pouvez supprimer ce comportement.
 
 ### Malo:
 
-- [ ] Ajouter une musique. Vous pourrez en trouver sur ces sites :
-    - http://dig.ccmixter.org/games
-    - https://www.playonloop.com/royalty-free-music/video-game-chiptune-music/
-    - https://github.com/OpenSourceMusic
-    - https://opengameart.org/
-    - Rappel : la musique est gérée au niveau de la scène _Preload
-- [ ] Ajouter une secousse de la caméra pour les actions suivantes :
-    - Mort du joueur
-    - Blessure du joueur
-
-    Cette fonctionnalité est déjà présente notamment dans le fichier `Assets/Scripts/RockHead.cs` avec le ScriptableObject évènementiel de type `CameraShakeEventChannel`.
 - [x] Terminer la gestion de la mort du personnage. A l'heure actuelle, il y a :
     - un évènement (OnPlayerDeath) sur le GameObject "Player" (utilisable depuis l'onglet `Assets` en Play Mode)
     - une animation de mort du personnage (testable avec la touche N du clavier)
@@ -40,11 +29,11 @@ Ce commit va
 
 ### Timéo:
 
-- [ ] Ajouter un nouveau niveau (décors, ennemis et mécaniques compris)
+- Ajouter un nouveau niveau (décors, ennemis et mécaniques compris)
     - Vous pouvez utiliser le thème que vous souhaitez pour la décoration. Vous pouvez donc importer de nouvelles tilemaps ou utiliser celles déjà présentes dans le projet
     - Vous pouvez récupérer des mécanismes/ennemis déjà présents dans le premier niveau
      - Il est **impératif** d'avoir dans vos niveaux supplémentaires la prefab "CurrentSceneManager"
-    - [ ] **Il doit être possible de terminer ce nouveau niveau**. Quand le niveau termine (au choix) :
+    - **Il doit être possible de terminer ce nouveau niveau**. Quand le niveau termine (au choix) :
         - Afficher les crédits
         - Retourner au menu principal
     - Vous pourrez trouver des inspirations ici :
@@ -53,29 +42,17 @@ Ce commit va
 
 ### Yves:
 
-- [ ] Rajouter un ennemi parmi ceux proposés
+- Rajouter un ennemi parmi ceux proposés
     - Dans l'archive que vous avez récupéré au début des cours, il y a un dossier `ressources/unity/sprites/platformer/Enemies`
         - N'oubliez pas qu'il y déjà des scripts décrivant des comportants appliquables à un ennemi : Patrouille (EnemyPatrol), Tir (EnemyShooting + ObjectPooling), Santé (Enemy)... à vous de les réutiliser, au besoin, pour votre nouvel ennemi
         - Voir [gestion des ennemis](#gestion-des-ennemis) pour en savoir plus
-- [ ] Remplacer les carrés bleus qui font office de checkpoints par un sprite plus approprié
+- Remplacer les carrés bleus qui font office de checkpoints par un sprite plus approprié
     - Il y a un sprite dédié dans le projet (`Assets/Imports/Scripts/Misc/Checkpoint*`)
-- [ ] Ajouter un état "désactivé" quand un bloc n'est plus interagissable
+- Ajouter un état "désactivé" quand un bloc n'est plus interagissable
   - **Vous devez faire vous-même le sprite**
 
 ### Bassem:
 
-- [ ] Expliquer comment le jeu fonctionne (les contrôles, mécaniques...)
-    - Vous pouvez réaliser cette tâche via un niveau de didacticiel, un menu dédié ou tout simplement du texte affiché directement dans la scène
-        - Il y a un sprite avec les différents contrôles et boutons dans les Assets que vous avez téléchargé. Si le sprite ne vous convient pas, vous pouvez également en télécharger un sur le site [thoseawesomeguys](https://thoseawesomeguys.com/prompts/), néanmoins les images sont séparées, il est préférable de tout fusionner en un sprite. Il est possible de générer des sprites avec un site comme [images-sprite-sheet-generator](https://codeshack.io/images-sprite-sheet-generator/)
-- [ ] Afficher, lorsqu'un niveau est terminé, le temps mis par le joueur pour terminer le niveau et d'autres statistiques (nombre d'ennemis éliminés, nombre de sauts...)
-- [ ] Proposer au joueur de choisir un personnage. Ce choix peut être fait :
-    - Au début du jeu, juste avant de commencer un niveau
-    - Après chaque mort du joueur
-    - Pour éviter de faire les animations pour chaque personnage Unity propose un système dédié: https://www.youtube.com/watch?v=6mNak-mQZpc - anglais
-        - Note : Comparé à la vidéo, l'interface d'Unity a un peu changé, mais le principe reste le même
-        - Note 2 : Il faut obligatoirement appliquer le système sur toutes les animations, sinon, vous allez avoir un comportement étrange au niveau des animations
-    - Note 3 : Si vous souhaitez faire référence à un SpriteLibraryAsset dans vos scripts, il faudra **impérativement** importer la bibliothèque `Unity​Engine.​U2D.​Animation` au début de vos scripts via la ligne `using Unity​Engine.​U2D.​Animation;`
-    > Libre à vous de proposer des caractérisques différentes entre chaque personnage
 - [x] Compléter l'écran d'accueil (écran qui permet de commencer le jeu)
     - L'écran doit contenir :
         - [x] Le logo de l'université
