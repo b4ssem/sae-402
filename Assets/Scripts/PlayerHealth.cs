@@ -20,6 +20,9 @@ public class PlayerHealth : MonoBehaviour
     public VoidEventChannel onPlayerDeath;
     public Slider slider;
 
+    [Header("Collectible channels")]
+    public IntEventChannel onPickUpHeal;
+
     private void Awake()
     {
         if (needResetHP || playerData.currentHealth <= 0)
@@ -31,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
     private void OnEnable()
     {
         onDebugDeathEvent.OnEventRaised += Die;
+        onPickUpHeal.OnEventRaised += Heal;
     }
 
     private void Start()
@@ -53,6 +57,16 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(playerInvulnerable.Invulnerable());
     }
 
+    public void Heal(int amount)
+    {
+        float healAmount = playerData.maxHealth * (amount / 100f);
+        playerData.currentHealth = Mathf.Min(
+            playerData.currentHealth + healAmount,
+            playerData.maxHealth
+        );
+        slider.value = playerData.currentHealth;
+    }
+
     private void Die()
     {
         onPlayerDeath?.Raise();
@@ -69,5 +83,6 @@ public class PlayerHealth : MonoBehaviour
     private void OnDisable()
     {
         onDebugDeathEvent.OnEventRaised -= Die;
+        onPickUpHeal.OnEventRaised -= Heal;
     }
 }
