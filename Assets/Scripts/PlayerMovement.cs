@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Jump system"), ReadOnlyInspector]
     public int jumpCount = 0;
+    public LevelData levelData;
     [SerializeField]
     private int nbMaxJumpsAllowed = 2;
     private float groundCheckRadius = 0.95f;
@@ -208,10 +209,12 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpCount++;
             isJumping = true;
+            levelData.jumpCount++;
 
             if (jumpCount > 1)
             {
                 animator.SetTrigger("DoubleJump");
+                levelData.jumpCount += 2 ;
             }
         }
         else

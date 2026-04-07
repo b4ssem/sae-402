@@ -4,6 +4,7 @@ using System.Collections;
 public class Enemy : MonoBehaviour
 {
     public FloatVariable maxHealth;
+    public LevelData levelData;
 
     [ReadOnlyInspector]
     public float currentHealth = 0f;
@@ -55,6 +56,7 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             StartCoroutine(Die());
+            levelData.enemiesKilled++;
         }
     }
 
