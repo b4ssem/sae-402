@@ -3,7 +3,10 @@ guid: 04dca70fcee2295499e1cfab1243e199
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pauseMenuUI: {instanceID: 0}
+  - onTogglePauseEvent: {instanceID: 0}
+  - onDebugConsoleOpenEvent: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
