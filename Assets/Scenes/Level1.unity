@@ -7479,7 +7479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 1.5, z: 0}
   smoothTime: 0.15
-  target: {fileID: 0}
+  target: {fileID: 1953952585}
 --- !u!114 &519420037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64762,6 +64762,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f643e4a1e0627c40ba0bc981b1f24b2, type: 3}
+--- !u!4 &1953952585 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8040188616511850589, guid: a0489625887e31e4493d73cac4b50486, type: 3}
+  m_PrefabInstance: {fileID: 1731515871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1954250771
 GameObject:
   m_ObjectHideFlags: 0
@@ -67042,7 +67047,7 @@ PrefabInstance:
     - target: {fileID: 1965563016259088149, guid: 8adb7e3f4486602478f1493a1f45e9dc, type: 3}
       propertyPath: pivot
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1953952585}
     - target: {fileID: 2013096264751035477, guid: 8adb7e3f4486602478f1493a1f45e9dc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.378
