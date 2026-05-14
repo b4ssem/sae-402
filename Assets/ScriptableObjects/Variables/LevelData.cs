@@ -7,12 +7,14 @@ public class LevelData : ScriptableObject
     public float timeElapsed;
     public int enemiesKilled;
     public int jumpCount;
+    public bool isActive;
 
     public void ResetData()
     {
         timeElapsed = 0f;
         enemiesKilled = 0;
         jumpCount = 0;
+        isActive = true;
     }
 
     public string GetFormattedTime()
@@ -21,4 +23,9 @@ public class LevelData : ScriptableObject
         int seconds = Mathf.FloorToInt(timeElapsed - minutes * 60);
         return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+
+    public void StopTimer()
+{
+    isActive = false;
+}
 }

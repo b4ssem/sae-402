@@ -5,7 +5,6 @@ public class LevelEndUI : MonoBehaviour
 {
     [Header("References")]
     public LevelData levelData; 
-    public LevelTimer levelTimer; 
     
     [Header("Événement pour changer de scène")]
     public StringEventChannel onLevelEnded;
@@ -21,7 +20,7 @@ public class LevelEndUI : MonoBehaviour
     {
         levelToLoad = nextLevelName;
 
-        if (levelTimer != null) levelTimer.StopTimer();
+        levelData.StopTimer();
 
         timeText.text = "Temps : " + levelData.GetFormattedTime();
         enemiesText.text = "Ennemis vaincus : " + levelData.enemiesKilled;

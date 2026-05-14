@@ -14,7 +14,7 @@ public class LevelTimer : MonoBehaviour
 
     private void Update()
     {
-        if (isLevelActive)
+        if (levelData.isActive)
         {
             levelData.timeElapsed += Time.deltaTime;
         }
@@ -22,6 +22,6 @@ public class LevelTimer : MonoBehaviour
 
     public void StopTimer() 
     { 
-        isLevelActive = false; 
+        levelData.StopTimer();
     }
 }
