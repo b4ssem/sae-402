@@ -12,8 +12,10 @@ public class EndLevel : MonoBehaviour
     [Space (10)]
 
     [Header("Broadcast event channels")]
-    public StringEventChannel onLevelEnded;
     public PlaySoundAtEventChannel sfxAudioChannel;
+
+    [Header("UI Reference")]
+    public LevelEndUI levelEndUI;
 
     private bool hasBeenTriggered = false;
 
@@ -26,7 +28,8 @@ public class EndLevel : MonoBehaviour
             {
                 particles.Play();
                 sfxAudioChannel.Raise(audioClip, transform.position);
-                onLevelEnded.Raise(nextLevelName);
+                
+                levelEndUI.ShowEndScreen(nextLevelName);
             } else {
                 Debug.LogError("Level missing");
             }

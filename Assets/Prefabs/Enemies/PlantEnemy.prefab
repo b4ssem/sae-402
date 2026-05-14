@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: {fileID: 11400000, guid: 512484eeea7ce824a8b559e487301311, type: 2}
+  levelData: {fileID: 11400000, guid: 35aab0055b263594d9f95d3b5dc1468c, type: 2}
   currentHealth: 0
   spriteRenderer: {fileID: 107261412584399394}
   rb: {fileID: 107261412584399400}
