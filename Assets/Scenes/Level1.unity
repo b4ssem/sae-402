@@ -62831,6 +62831,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7682421010649067121, guid: a0489625887e31e4493d73cac4b50486, type: 3}
+      propertyPath: debugTransform
+      value: 
+      objectReference: {fileID: 1917005669}
     - target: {fileID: 8040188616511850589, guid: a0489625887e31e4493d73cac4b50486, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.465303
@@ -67489,7 +67493,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4327952917441872136, guid: 92bac9f893f07004597c7c071c3c0d9a, type: 3}
       propertyPath: nextLevelName
-      value: Debug
+      value: Level2
       objectReference: {fileID: 0}
     - target: {fileID: 4327952917441872138, guid: 92bac9f893f07004597c7c071c3c0d9a, type: 3}
       propertyPath: m_RootOrder
