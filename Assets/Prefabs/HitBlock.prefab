@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5889963602598934111}
   - component: {fileID: 3916234380506917314}
   - component: {fileID: 4078796444833076163}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HitBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}

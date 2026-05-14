@@ -1,30 +1,30 @@
 using System.Collections;
 using System.Diagnostics;
 using UnityEngine;
- 
+
 public class HitBlock : MonoBehaviour
 {
     private Animator animator;
     private SpriteRenderer sr;
- 
+
     private PlatformEffector2D pe2d;
- 
+
     [SerializeField]
     private GameObject itemPrefabStored;
- 
+
     [SerializeField]
     private bool isHidden = false;
- 
+
     private bool isAnimating = false;
 
     private int appleCount = 0;
- 
+
     void Awake()
     {
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         pe2d = GetComponent<PlatformEffector2D>();
- 
+
         if (isHidden)
         {
             sr.enabled = false;
@@ -36,35 +36,41 @@ public class HitBlock : MonoBehaviour
             pe2d.enabled = false;
         }
     }
- 
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (!collision.gameObject.CompareTag("Player"))
         {
             return;
         }
- 
+
         ContactPoint2D contactPoint = collision.GetContact(0);
- 
+
         if (contactPoint.normal.y > 0.5f && !isAnimating && appleCount < 2)
         {
             appleCount++;
             sr.enabled = true;
             pe2d.enabled = false;
- 
+
             animator.SetTrigger("Hit");
- 
+
+            // Si le bloc a été frappé 2 fois, on affiche l'état désactivé
+            if (appleCount >= 2)
+            {
+                animator.SetTrigger("Disabled");
+            }
+
             if (itemPrefabStored != null)
             {
                 StartCoroutine(ItemStoredAnimation());
             }
         }
     }
- 
+
     IEnumerator ItemStoredAnimation()
     {
         isAnimating = true;
- 
+
         GameObject itemStored = Instantiate(
                     itemPrefabStored,
                     transform.position,
@@ -81,9 +87,7 @@ public class HitBlock : MonoBehaviour
         );
         // Activation de l'animation
         itemCollectible.Picked();
- 
+
         isAnimating = false;
     }
 }
- 
- 
