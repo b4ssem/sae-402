@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Apple
   m_EditorClassIdentifier: 
   title: Apple
-  value: 50
+  value: 1
   audioClip: {fileID: 8300000, guid: 01b20bbbf1e61064b9b967d9a458ec58, type: 3}
   sprite: {fileID: 444478395, guid: 2e86a061745f746418a8f00ddddbc481, type: 3}
+  DeveloperDescription: 
   onPickUpAudio: {fileID: 11400000, guid: cdb31aea211f71549a57205694811885, type: 2}
   onPickUpValue: {fileID: 11400000, guid: 3f0766695e4e1064ba3f4c4d2df7f35c, type: 2}

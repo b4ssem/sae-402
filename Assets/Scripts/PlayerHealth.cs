@@ -1,11 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     public Animator animator;
-
     public SpriteRenderer sr;
-
     public PlayerInvulnerable playerInvulnerable;
 
     [Tooltip("Please uncheck it on production")]
@@ -19,6 +18,10 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("Broadcast event channels")]
     public VoidEventChannel onPlayerDeath;
+    public Slider slider;
+
+    [Header("Collectible channels")]
+    public IntEventChannel onPickUpHeal;
 
     private void Awake()
     {
@@ -31,6 +34,14 @@ public class PlayerHealth : MonoBehaviour
     private void OnEnable()
     {
         onDebugDeathEvent.OnEventRaised += Die;
+        onPickUpHeal.OnEventRaised += Heal;
+    }
+
+    private void Start()
+    {
+        if (slider == null) { Debug.LogError("Slider non assigné !"); return; }
+        slider.maxValue = playerData.maxHealth;
+        slider.value = playerData.currentHealth;
     }
 
     public void TakeDamage(float damage)
@@ -38,14 +49,22 @@ public class PlayerHealth : MonoBehaviour
         if (playerInvulnerable.isInvulnerable && damage < float.MaxValue) return;
 
         playerData.currentHealth -= damage;
+        slider.value = playerData.currentHealth;
+
         if (playerData.currentHealth <= 0)
-        {
             Die();
-        }
         else
-        {
             StartCoroutine(playerInvulnerable.Invulnerable());
-        }
+    }
+
+    public void Heal(int amount)
+    {
+        float healAmount = playerData.maxHealth * (amount / 100f);
+        playerData.currentHealth = Mathf.Min(
+            playerData.currentHealth + healAmount,
+            playerData.maxHealth
+        );
+        slider.value = playerData.currentHealth;
     }
 
     private void Die()
@@ -64,5 +83,6 @@ public class PlayerHealth : MonoBehaviour
     private void OnDisable()
     {
         onDebugDeathEvent.OnEventRaised -= Die;
+        onPickUpHeal.OnEventRaised -= Heal;
     }
 }
