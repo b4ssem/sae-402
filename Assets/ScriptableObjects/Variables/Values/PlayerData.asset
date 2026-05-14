@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   maxHealth: 10
-  _currentHealth: 0
+  _currentHealth: 10
   DeveloperDescription: 
