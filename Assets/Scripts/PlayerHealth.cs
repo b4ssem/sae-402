@@ -23,6 +23,11 @@ public class PlayerHealth : MonoBehaviour
     [Header("Collectible channels")]
     public IntEventChannel onPickUpHeal;
 
+    [Header("Camera Shake")]
+    public CameraShakeEventChannel cameraShake;
+    public ShakeTypeVariable damageShakeInfo;
+    public ShakeTypeVariable deathShakeInfo;
+
     private void Awake()
     {
         if (needResetHP || playerData.currentHealth <= 0)
@@ -52,9 +57,17 @@ public class PlayerHealth : MonoBehaviour
         slider.value = playerData.currentHealth;
 
         if (playerData.currentHealth <= 0)
+        {
             Die();
+        }
         else
+        {
+            if (cameraShake != null && damageShakeInfo != null)
+            {
+                cameraShake.Raise(damageShakeInfo);
+            }
             StartCoroutine(playerInvulnerable.Invulnerable());
+        }
     }
 
     public void Heal(int amount)
@@ -69,6 +82,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
+        if (cameraShake != null)
+        {
+            cameraShake.Raise(deathShakeInfo != null ? deathShakeInfo : damageShakeInfo);
+        }
+
         onPlayerDeath?.Raise();
         GetComponent<Rigidbody2D>().simulated = false;
         transform.Rotate(0f, 0f, 45f);
