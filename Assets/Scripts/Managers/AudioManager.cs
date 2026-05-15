@@ -1,14 +1,17 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     public AudioSource mainAudioSource;
     public AudioMixerGroup soundEffectMixer;
     public AudioMixerGroup musicEffectMixer;
+    
+    [Tooltip("Index 0 = Menu, 1 = Niveau 1, 2 = Niveau 2 (selon les Build Settings)")]
     public AudioClip[] playlist;
-    private int musicIndex;
+    
     private float volumeOnPaused = 0.35f;
     private float volumeOnPlay = 1f;
     private float volumeStep = 0.005f;
@@ -19,20 +22,19 @@ public class AudioManager : MonoBehaviour
     private void OnEnable()
     {
         sfxAudioChannel.OnEventRaised += PlayClipAt;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        mainAudioSource.clip = playlist[0];
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (!mainAudioSource.isPlaying)
+        if (scene.buildIndex < playlist.Length && playlist[scene.buildIndex] != null)
         {
-            PlayNextMusic();
+            if (mainAudioSource.clip != playlist[scene.buildIndex])
+            {
+                mainAudioSource.clip = playlist[scene.buildIndex];
+                mainAudioSource.outputAudioMixerGroup = musicEffectMixer;
+                mainAudioSource.Play();
+            }
         }
     }
 
@@ -54,14 +56,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    void PlayNextMusic()
-    {
-        musicIndex = (musicIndex + 1) % playlist.Length;
-        mainAudioSource.clip = playlist[musicIndex];
-        mainAudioSource.outputAudioMixerGroup = musicEffectMixer;
-        mainAudioSource.Play();
-    }
-
     public void PlayClipAt(AudioClip clip, Vector3 position)
     {
         GameObject tempGO = new GameObject("TempAudio");
@@ -75,7 +69,6 @@ public class AudioManager : MonoBehaviour
 
     public void OnTogglePause(bool isGamePaused)
     {
-        // AudioListener.pause = isGamePaused;
         if (isGamePaused)
         {
             StopAllCoroutines();
@@ -91,5 +84,6 @@ public class AudioManager : MonoBehaviour
     private void OnDisable()
     {
         sfxAudioChannel.OnEventRaised -= PlayClipAt;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
