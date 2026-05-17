@@ -438,8 +438,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 8300000, guid: c0916deb4a68e0b4da76831d1f72d57f, type: 3}
   - {fileID: 8300000, guid: f2ef06566d40042468223be90adaf258, type: 3}
-  - {fileID: 0}
   - {fileID: 8300000, guid: d0ed2ef975fa7ca41b68fd92efa92454, type: 3}
+  - {fileID: 0}
   sfxAudioChannel: {fileID: 11400000, guid: cdb31aea211f71549a57205694811885, type: 2}
 --- !u!4 &9194846822252313343
 Transform:
