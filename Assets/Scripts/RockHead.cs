@@ -120,10 +120,10 @@ public class RockHead : MonoBehaviour
                 PlayerContacts playerContacts = player[0].transform.GetComponent<PlayerContacts>();
 
                 if (
-                    (currentMovement == Movement.VerticalPositive && playerContacts.hasTopContact) ||
-                    (currentMovement == Movement.VerticalNegative && playerContacts.hasBottomContact) ||
-                    (currentMovement == Movement.HorizontalNegative && playerContacts.hasLeftContact) ||
-                    (currentMovement == Movement.HorizontalPositive && playerContacts.hasRightContact)
+                    (currentMovement == Movement.VerticalPositive && (playerContacts.hasTopContact || listContacts.Length > 1)) ||
+                    (currentMovement == Movement.VerticalNegative && (playerContacts.hasBottomContact || listContacts.Length > 1)) ||
+                    (currentMovement == Movement.HorizontalNegative && (playerContacts.hasLeftContact || listContacts.Length > 1)) ||
+                    (currentMovement == Movement.HorizontalPositive && (playerContacts.hasRightContact || listContacts.Length > 1))
                 )
                 {
                     PlayerHealth playerHealth = player[0].transform.GetComponent<PlayerHealth>();
