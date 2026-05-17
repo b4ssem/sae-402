@@ -63,12 +63,56 @@ public class CurrentSceneManager : MonoBehaviour
     public static void RestartLastCheckpoint()
     {
         Debug.Log("RestartLastCheckpoint");
-        // Refill life to full
-        // Position to last checkpoint
-        // Remove menu
-        // Reset Rigidbody
-        // Reactivate Player movements
-        // Reset Player's rotation
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.simulated = true;
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+            rb.bodyType = RigidbodyType2D.Dynamic;
+        }
+
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            playerHealth.playerData.currentHealth = playerHealth.playerData.maxHealth;
+            playerHealth.slider.value = playerHealth.playerData.currentHealth;
+        }
+
+        PlayerSpawn playerSpawn = player.GetComponent<PlayerSpawn>();
+        if (playerSpawn != null)
+        {
+            player.transform.position = playerSpawn.currentSpawnPosition;
+        }
+        
+        GameObject gameOverMenu = GameObject.Find("Game Over Menu");
+        if (gameOverMenu != null)
+        {
+            gameOverMenu.SetActive(false);
+        }
+
+        player.transform.rotation = Quaternion.identity;
+
+        PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
+        if (playerMovement != null)
+        {
+            playerMovement.enabled = true;
+        }
+
+        SpriteRenderer sr = player.GetComponentInChildren<SpriteRenderer>();
+        if (sr != null)
+        {
+            sr.enabled = true;
+        }
+        
+        PauseManager pauseManager = FindFirstObjectByType<PauseManager>();
+        if (pauseManager != null)
+        {
+            pauseManager.Resume();
+        }
+
     }
 
     public static void QuitGame()
