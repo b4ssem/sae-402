@@ -93,14 +93,14 @@ public class CurrentSceneManager : MonoBehaviour
             gameOverMenu.SetActive(false);
         }
 
-        player.transform.rotation = Quaternion.identity;
+        player.transform.rotation = Quaternion.Euler(0f, player.transform.rotation.eulerAngles.y, 0f);
 
         PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
         if (playerMovement != null)
         {
-            playerMovement.enabled = true;
+            playerMovement.ToggleState(false); 
+            playerMovement.isStunned = false;
         }
-
         SpriteRenderer sr = player.GetComponentInChildren<SpriteRenderer>();
         if (sr != null)
         {
